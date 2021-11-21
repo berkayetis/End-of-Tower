@@ -12,6 +12,7 @@ public class ObjectCaller : MonoBehaviour
     public Transform generatorPoint;
     public float lastLeftColumn = -4.9f;
     public float lastRightColumn = -4.9f;
+    public float columnWidth = 2.7f;
     public Vector3 initVector = Vector3.zero;
     private void FixedUpdate()
     {
@@ -30,10 +31,10 @@ public class ObjectCaller : MonoBehaviour
             platform.transform.position = transform.position;
 
             GameObject column = objectPool.GetPooledObject(0, initVector);
-            column.transform.position = new Vector3(-2.632f, transform.position.y-5f, transform.position.z);
+            column.transform.position = new Vector3(-columnWidth, transform.position.y-5f, transform.position.z);
 
             GameObject column2 = objectPool.GetPooledObject(0, initVector);
-            column2.transform.position = new Vector3(2.632f, transform.position.y - 5f, transform.position.z);
+            column2.transform.position = new Vector3(columnWidth, transform.position.y - 5f, transform.position.z);
         }
       
     }
